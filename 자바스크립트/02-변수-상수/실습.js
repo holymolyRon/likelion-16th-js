@@ -176,19 +176,33 @@ let SuperMario, User, ShoppingCart;
 // --------------------------------------------------------------------------
 // 사용자 정보 관리
 // --------------------------------------------------------------------------
+{
+  // 사용자 기본 정보 (let 사용 - 변경 가능)
+  // * 이름
+  let userName = "정론";
+  // * 나이
+  let userAge = 89;
+  // * 이메일
+  let userEmail = "wjdfhs111@gmail.com";
+  console.log("변경 전:", userName, userAge, userEmail);
 
-// 사용자 기본 정보 (let 사용 - 변경 가능)
-// * 이름
-// * 나이
-// * 이메일
-
-// 정보 업데이트
-
+  // 정보 업데이트
+  userName = "야무";
+  userAge = 20;
+  userEmail = "yamoo@gmail.com";
+  console.log("변경 후:", userName, userAge, userEmail);
+}
 // 시스템 설정 (const 사용 - 변경 불가)
 // * 시스템 이름
+const SYSTEM_NAME = "macOS";
 // * 시스템 버전
+const SYSTEM_VERSION = "15.6.2";
 // * 최대 로그인 시도 횟수
+const MAX_LOGIN_ATTEMPTS = 5;
 // * 세션 타임아웃
+const SESSION_TIMEOUT = 3000;
+
+// SYSTEM_NAME = "Windows"; // ❌ 에러 발생! TypeError: Assignment to constant variable.
 
 // --------------------------------------------------------------------------
 // 쇼핑몰 상품 관리
@@ -196,14 +210,21 @@ let SuperMario, User, ShoppingCart;
 
 // 상품 정보 (변경 가능한 변수)
 // * 상품 이름
+let productName = "노트북";
 // * 상품 가격
+let productPrice = 98000;
 // * 상품 재고
+let productInventory = 102;
 // * 상품 카테고리
+let productCategory = "디지털 기기 / 랩탑";
 
 // 시스템 상수 (변경 불가)
 // * 부가세 10%
+const SURTAX = 0.1;
 // * 무료배송 기준 40,000원
+const SHIPPING_FREE = 40000;
 // * 최소 주문 금액 10,000원
+const MIN_ORDER_AMOUNT = 10000;
 
 // --------------------------------------------------------------------------
 // let vs const 선택 가이드
@@ -211,6 +232,7 @@ let SuperMario, User, ShoppingCart;
 
 // const 사용
 // 변경할 필요 없는 값
+// TIP. 먼저 const 키워드를 사용 -> 변경 필요가 있을 시, let으로 변경
 
 // let 사용
 // 값이 변경될 수 있는 값
@@ -221,21 +243,32 @@ let SuperMario, User, ShoppingCart;
 
 // 문제 1: 학생 정보를 저장하는 변수를 만드세요.
 // - 이름 (변경 가능)
+let studentName = "이정론";
 // - 학년 (변경 가능)
+let studentGrade = 3;
 // - 학번 (변경 불가)
+const STUDENT_NUMBER = "2024001";
 // - 학교 이름 (변경 불가)
+const SCHOOL_NAME = "대한 대학교";
 
 // 문제 2: 도서관 책 정보를 저장하는 변수를 만드세요.
 // - 책 제목 (변경 불가)
+const BOOK_TITLE = "프론트엔드 마스터";
 // - 저자 (변경 불가)
+const BOOK_AUTHOR = "박영준";
 // - 대출 가능 여부 (변경 가능)
+let isLoanable = true;
 // - 대출 횟수 (변경 가능)
-
+let loanCount = 5;
 // 문제 3: 온라인 쇼핑몰 장바구니를 만드세요.
 // - 상품명 (변경 불가)
+const PRODUCT_NAME = "맥심 에스프레소";
 // - 가격 (변경 불가)
+const PRODUCT_PRICE = 2100;
 // - 수량 (변경 가능)
+let productCount = 3;
 // - 총 금액 (변경 가능)
+let totalAmount = PRODUCT_PRICE * productCount;
 
 // --------------------------------------------------------------------------
 // 요약 및 베스트 프랙티스
