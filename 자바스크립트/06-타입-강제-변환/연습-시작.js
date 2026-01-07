@@ -15,66 +15,91 @@ const PRODUCT_3_QUANTITY = '1'
 // 첫 번째 상품의 소계를 계산하세요.
 // 출력 결과: 70000 (number)
 let product_1_subtotal
+product_1_subtotal = Number(PRODUCT_1_PRICE) * Number(PRODUCT_1_QUANTITY)
+console.log(product_1_subtotal)
 
 // 두 번째 상품의 소계를 계산하세요.
 // 출력 결과: 144000 (number)
 let product_2_subtotal
+product_2_subtotal = Number(PRODUCT_2_PRICE) * Number(PRODUCT_2_QUANTITY)
+console.log(product_2_subtotal)
 
 // 세 번째 상품의 소계를 계산하세요.
 // 출력 결과: 25000 (number)
 let product_3_subtotal
+product_3_subtotal = Number(PRODUCT_3_PRICE) * Number(PRODUCT_3_QUANTITY)
+console.log(product_3_subtotal)
 
 // 전체 상품의 합계를 계산하세요.
 // 출력 결과: 239000 (number)
 let cart_total
+cart_total = product_1_subtotal + product_2_subtotal + product_3_subtotal
+console.log(cart_total)
 
 // 배송비를 추가하세요. (3000원, 문자열로 입력됨)
 const SHIPPING_FEE = '3000'
 // 출력 결과: 242000 (number)
 let total_with_shipping
+total_with_shipping = cart_total + Number(SHIPPING_FEE)
+console.log(total_with_shipping)
 
 // 회원 할인율을 적용하세요. (10% 할인, 문자열로 입력됨)
 const MEMBER_DISCOUNT_RATE = '0.1'
 // 출력 결과: 24200 (number)
 let discount_amount
+discount_amount = total_with_shipping * Number(MEMBER_DISCOUNT_RATE)
+console.log(discount_amount)
 
 // 최종 결제 금액을 계산하세요.
 // 출력 결과: 217800 (number)
 let final_payment
+final_payment = total_with_shipping - discount_amount
+console.log(final_payment)
 
 // 포인트 적립액을 계산하세요. (최종 금액의 1%, 문자열로 입력됨)
 const POINT_RATE = '0.01'
 // 출력 결과: 2178 (number)
 let earned_points
+earned_points = final_payment * Number(POINT_RATE)
+console.log(earned_points)
 
 // 다음 구매 시 사용 가능한 쿠폰 금액 (문자열)
 const COUPON_AMOUNT = '5000'
 // 쿠폰을 사용했을 때의 금액을 계산하세요.
 // 출력 결과: 212800 (number)
 let payment_with_coupon
+payment_with_coupon = final_payment - Number(COUPON_AMOUNT)
+console.log(payment_with_coupon)
 
 // 결제 정보를 문자열로 출력하세요.
 // 출력 결과: '상품 합계: 239000원, 배송비: 3000원, 할인: 24200원, 최종 결제: 217800원'
 let payment_summary
+payment_summary = `상품 합계: ${cart_total}원, 배송비: ${Number(SHIPPING_FEE)}원, 할인: ${discount_amount}원, 최종 결제: ${final_payment}원`
+console.log(payment_summary)
 
 // 잘못된 계산 예시 (주의!)
 // PRODUCT_1_PRICE, PRODUCT_1_QUANTITY 덧셈: 문자열 연결이 일어나는 경우 
 // 출력 결과: '350002' (string) - 잘못된 계산!
 let wrong_calculation_1
+wrong_calculation_1 = PRODUCT_1_PRICE + PRODUCT_1_QUANTITY
+console.log(wrong_calculation_1)
 
 // 올바른 계산 방법
 // 출력 결과: 37000 (number)
 let correct_calculation_1
+correct_calculation_1 = Number(PRODUCT_1_PRICE) * Number(PRODUCT_1_QUANTITY)
+console.log(correct_calculation_1)
 
 // NaN이 발생하는 경우
 const INVALID_PRICE = 'abc'
 // 출력 결과: NaN (number)
-let invalid_calculation
+let invalid_calculation = Number(INVALID_PRICE)
+console.log(invalid_calculation)
 
 // NaN 체크하기
 // 출력 결과: true
-let is_invalid
-
+let is_invalid = Number.isNaN(invalid_calculation)
+console.log(is_invalid)
 
 // --------------------------------------------------------------------------
 // 연습 문제: 사용자 정보 처리 시스템
@@ -91,29 +116,36 @@ const USER_COUPON = undefined   // undefined
 
 // 나이를 숫자로 변환하세요.
 // 출력 결과: 28 (number)
-let age_number
+let age_number = Number(USER_AGE)
+console.log(age_number)
 
 // 내년 나이를 계산하세요.
 // 출력 결과: 29 (number)
-let next_year_age
+let next_year_age = age_number + 1
+console.log(next_year_age)
 
 // 키를 숫자로 변환하세요.
 // 출력 결과: 175.5 (number)
-let height_number
+let height_number = Number(USER_HEIGHT)
+console.log(height_number)
 
 // 몸무게를 숫자로 변환하세요.
 // 출력 결과: 70 (number)
-let weight_number
+let weight_number = Number(USER_WEIGHT)
+console.log(weight_number)
 
 // BMI를 계산하세요. (몸무게 / (키/100)²)
 // 출력 결과: 약 22.73 (number)
-let bmi
+let bmi = weight_number / Math.pow(height_number / 100, 2)
+console.log(bmi)
 
 // 회원 여부를 불리언으로 변환하세요.
 // 힌트! 부정(!) 연산자 활용
 // 출력 결과: true (boolean)
-let is_member_boolean
+let is_member_boolean = !!IS_MEMBER
+console.log(is_member_boolean)
 
+// =======================================================================
 // 로그인 횟수를 숫자로 변환하세요.
 // 출력 결과: 0 (number)
 let login_count_number
