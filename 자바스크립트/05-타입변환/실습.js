@@ -12,13 +12,11 @@
 // * 권장 사항
 // --------------------------------------------------------------------------
 
-
-const LAST_YEAR = '2025년', 
-      CURRENT_YEAR = '2026', 
-      NEXT_YEAR = 2027,
-      PI = '3.141592',
-      RATING = '9.24점'
-
+const LAST_YEAR = "2025년",
+  CURRENT_YEAR = "2026",
+  NEXT_YEAR = 2027,
+  PI = "3.141592",
+  RATING = "9.24점";
 
 // --------------------------------------------------------------------------
 // 문자 → 숫자(정수) 변환
@@ -30,36 +28,39 @@ const LAST_YEAR = '2025년',
 
 // 출력 결과: '2025년' → 2025
 
-console.log(LAST_YEAR)
+console.log(LAST_YEAR);
 // 전역(Global Scope) 함수 (내장)
 // 출력 결과: '2026' → 2026
-console.log(parseInt(LAST_YEAR, 10) + 1)
-console.log(parseInt(LAST_YEAR, 10) + 15 + '년')
+console.log(parseInt(LAST_YEAR, 10) + 1);
+console.log(parseInt(LAST_YEAR, 10) + 15 + "년");
 
-console.log(parseInt('1280px', 10) + 5 + 'px')
-console.log(parseInt('4rem', 10) + 5 + 'rem')
+console.log(parseInt("1280px", 10) + 5 + "px");
+console.log(parseInt("4rem", 10) + 5 + "rem");
 
-console.log(parseInt('123abc', 10))
-console.log(parseInt('abc123', 10))
-console.log(parseInt('123.456', 10))
+console.log(parseInt("123abc", 10));
+console.log(parseInt("abc123", 10));
+console.log(parseInt("123.456", 10));
 
-const n1 = '1274', n2 = '1274년', n3 ='1247.457'
+const n1 = "1274",
+  n2 = "1274년",
+  n3 = "1247.457";
 
-console.log(Number(n1))
-console.log(Number(n2))
-console.log(Number(n3))
+console.log(Number(n1));
+console.log(Number(n2));
+console.log(Number(n3));
 
-console.log(+n1)
-console.log(+n2)
-console.log(+n3)
+console.log(+n1);
+console.log(+n2);
+console.log(+n3);
 
-const a1 = '1', a2 = '2', a3 = '3'
+const a1 = "1",
+  a2 = "2",
+  a3 = "3";
 
-console.log('1' + '2' + '3')
-console.log(a1 + a2 + a3)
-console.log(Number(a1) + Number(a2) + Number(a3))
-console.log(+a1 + +a2 + +a3)
-
+console.log("1" + "2" + "3");
+console.log(a1 + a2 + a3);
+console.log(Number(a1) + Number(a2) + Number(a3));
+console.log(+a1 + +a2 + +a3);
 
 // --------------------------------------------------------------------------
 // 문자 → 실수(소수) 변환
@@ -68,9 +69,12 @@ console.log(+a1 + +a2 + +a3)
 // --------------------------------------------------------------------------
 
 // 출력 결과: '3.141592' → 3.141592
+console.log("3.141592");
+console.log(parseFloat("3.141592"));
 
 // 출력 결과: '9.24점' → 9.24
-
+console.log("9.24점");
+console.log(parseFloat("9.24점"));
 
 // --------------------------------------------------------------------------
 // 숫자 → 문자 변환
@@ -81,13 +85,65 @@ console.log(+a1 + +a2 + +a3)
 // --------------------------------------------------------------------------
 
 // 출력 결과: 2027 → '2027'
+console.log(NEXT_YEAR);
+console.log(String(NEXT_YEAR));
+console.log(NEXT_YEAR + "");
+console.log(NEXT_YEAR.toString());
 
 // 출력 결과: 2027 → '2027년'
+console.log(2027);
+
+console.log(String(2027) + "년");
+console.log(2027 + "년"); // ✅ 추천
+
+console.log(String(1960) + "px");
+console.log(1960 + "px"); // ✅ 추천
+
+// 진법 변환 (2진수)
+const myNumber = 255;
+console.log(myNumber);
+
+// 숫자 → 문자열 변환 (기본 기능)
+console.log(myNumber.toString());
 
 // 출력 결과: 255 → '11111111' (2진수)
+console.log(myNumber.toString(2));
 
 // 출력 결과: 255 → 'ff' (16진수)
+console.log(myNumber.toString(16));
 
+// 색상 값(일상, 10진수) → 색상 코드(컴퓨터, 16진수) 변환
+const red = 255,
+  green = 120,
+  blue = 30;
+
+const redHexValue = red.toString(16).padStart(2, "0");
+console.log(redHexValue);
+const greenHexValue = green.toString(16).padStart(2, "0");
+console.log(greenHexValue);
+const blueHexValue = blue.toString(16).padStart(2, "0");
+console.log(blueHexValue);
+
+let hexCode = "#";
+
+// hexCode = hexCode + redHexValue
+// 복합 할당 연산자 (+=)
+// x += 'hey'
+hexCode += redHexValue;
+hexCode += greenHexValue;
+hexCode += blueHexValue;
+
+const tempHexCode =
+  "#" +
+  red.toString(16).padStart(2, "0") +
+  green.toString(16).padStart(2, "0") +
+  blue.toString(16).padStart(2, "0");
+console.log(tempHexCode);
+
+// 출력 결과 (예시): '#ff8000'
+console.log(hexCode);
+
+// 색상 코드(컴퓨터, 16진수) → 색상 값(일상, 10진수) 변환
 
 // --------------------------------------------------------------------------
 // 숫자 → 불리언 변환
@@ -105,7 +161,6 @@ console.log(+a1 + +a2 + +a3)
 
 // 출력 결과: -0.1 → true
 
-
 // --------------------------------------------------------------------------
 // 문자 → 불리언 변환
 // --------------------------------------------------------------------------
@@ -117,7 +172,6 @@ console.log(+a1 + +a2 + +a3)
 // 출력 결과: ' ' → true
 
 // 출력 결과: '0' → true
-
 
 // --------------------------------------------------------------------------
 // 숫자가 아님(NaN): 숫자 연산 실패 시, 생성
@@ -148,7 +202,6 @@ console.log(+a1 + +a2 + +a3)
 // 출력 결과: 0 / 0 → NaN
 
 // 출력 결과: Infinity - Infinity → NaN
-
 
 // --------------------------------------------------------------------------
 // NaN 확인
@@ -182,7 +235,6 @@ console.log(+a1 + +a2 + +a3)
 
 // 출력 결과: Number.isNaN({}) → false (✅ NaN 아님)
 
-
 // --------------------------------------------------------------------------
 // Falsy & Truthy
 // --------------------------------------------------------------------------
@@ -201,7 +253,6 @@ console.log(+a1 + +a2 + +a3)
 // 출력 결과: undefined → false
 
 // 출력 결과: NaN → false
-
 
 // --------------------------------------------------------------------------
 // 권장 사항
