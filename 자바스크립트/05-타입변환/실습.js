@@ -30,7 +30,35 @@ const LAST_YEAR = '2025년',
 
 // 출력 결과: '2025년' → 2025
 
+console.log(LAST_YEAR)
+// 전역(Global Scope) 함수 (내장)
 // 출력 결과: '2026' → 2026
+console.log(parseInt(LAST_YEAR, 10) + 1)
+console.log(parseInt(LAST_YEAR, 10) + 15 + '년')
+
+console.log(parseInt('1280px', 10) + 5 + 'px')
+console.log(parseInt('4rem', 10) + 5 + 'rem')
+
+console.log(parseInt('123abc', 10))
+console.log(parseInt('abc123', 10))
+console.log(parseInt('123.456', 10))
+
+const n1 = '1274', n2 = '1274년', n3 ='1247.457'
+
+console.log(Number(n1))
+console.log(Number(n2))
+console.log(Number(n3))
+
+console.log(+n1)
+console.log(+n2)
+console.log(+n3)
+
+const a1 = '1', a2 = '2', a3 = '3'
+
+console.log('1' + '2' + '3')
+console.log(a1 + a2 + a3)
+console.log(Number(a1) + Number(a2) + Number(a3))
+console.log(+a1 + +a2 + +a3)
 
 
 // --------------------------------------------------------------------------
