@@ -109,9 +109,33 @@ console.log(multiply(9, -3))
 
 // 일반적인 화살표 함수 (중괄호 {}와 return 키워드 사용)
 // 명시적 반환(Explicit Return) 함수 정의 (x + y 반환)
+const px2rem = (pxValue/* 100px */) => {
+  // 16px === 1rem
+  return parseFloat(pxValue) / 16 + 'rem'
+}
+
+console.log(px2rem(16))
+console.log(px2rem('16'))
+console.log(px2rem('16px'))
 
 // 암묵적 반환을 사용하는 화살표 함수 (중괄호 {}와 return 생략)
 // 암묵적 반환(Implicit Return) 함수 정의 (x + y 반환)
+
+// 명시적 반환
+// const rem2px = (remValue) => {
+//   return parseFloat(remValue) * 16 + 'px'
+// }
+
+// 변신 1. 매개변수 1개는 소괄호 생략 가능
+// const rem2px = remValue => {
+//   return parseFloat(remValue) * 16 + 'px'
+// }
+// 변신 2. 암묵적 변환
+const rem2px = remValue => parseFloat(remValue) * 16 + 'px'
+
+console.log(rem2px(1))
+console.log(rem2px('1'))
+console.log(rem2px('1rem'))
 
 // 두 함수의 결과 비교 출력
 
@@ -119,12 +143,70 @@ console.log(multiply(9, -3))
 // 본문이 한 줄이고 중괄호가 없으면, 자동으로 계산된 값이 반환되도록 작동합니다.
 // 출력 결과: 두 함수 모두 동일한 덧셈 결과 출력
 
+// 함수 표현식
+const ppls = function(x, y) { return x + y }
+const mminus = function(x, y) { return x - y }
+const mmultiple = function(x, y) { return x * y }
+const ddivide = function(x, y) { return x / y }
+
+// 화살표 함수 표현식 
+const plus = (x, y) => x + y
+const minus = (x, y) => x - y
+const multiple = (x, y) => x * y
+const divide = (x, y) => x / y
+const double = x => x ** 2
+
 
 // --------------------------------------------------------------------------
 // 객체(Object) 반환 시 주의사항
 // --------------------------------------------------------------------------
 
 // 문자열 value를 받아 객체 { key: value }를 반환하는 createObject 함수 정의
+
+// 1. 함수 선언문
+function createPerson(name, age, hobby) {
+  
+  // 사람 추상화한 객체 생성
+  const 사람_객체 = {
+    이름: name,
+    나이: age + '살',
+    취미: hobby
+  }
+  // 사람 객체 반환
+  return 사람_객체
+}
+const minji = createPerson('하민지', 17, '유튜브 시청')
+const junwoo = createPerson('박준우', 45, '골프')
+const jeongron = createPerson('정론', 29, '코딩')
+console.log(minji)
+console.log(junwoo)
+
+// 2. 함수 표현식 
+const createHuman = function(userName, userEmail, IQ) {
+  // 인간 객체 { 이름, 이메일, 지능 }
+  return{
+    name: userName,
+    email: userEmail,
+    intelligence: IQ
+  }
+}
+const human1 = createHuman('김철수', 'kim@naver.com', 145)
+const human2 = createHuman('이태규', 'lee@naver.com', 150)
+console.log(human1)
+console.log(human2)
+
+// 3. 화살표 함수 표현식 => 객체 바로 반환 시 소괄호() 사용
+const createHouse = (이름, 유형, 면적, 빌트인_여부) => ({
+  name: 이름,
+  type: 유형,
+  area: 면적 + 'm²',
+  isBuiltIn: 빌트인_여부
+})
+const 골드_빌라 = createHouse('골드', '빌라', 100, true)
+const 퍼플_오피스텔 = createHouse('퍼플', '오피스텔', 75, false)
+console.log(골드_빌라)
+console.log(퍼플_오피스텔)
+
 // 주의: 객체 리터럴의 중괄호 {}를 함수 본문 블록으로 착각하지 않도록 소괄호 ()로 감싸야 함
 
 // createObject 함수 호출 및 결과 출력
