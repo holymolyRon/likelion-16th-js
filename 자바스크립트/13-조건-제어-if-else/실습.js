@@ -13,13 +13,40 @@
 // --------------------------------------------------------------------------
 
 // isLightColorRed 변수에 true 할당
-
+// let isLightColorRed = true // '빨간불'
 
 // if … else 문 작성
+// if (조건) {
+//   조건이 참인 경우 실행
+// }
+
+// if (조건) {
+//   조건이 참인 경우 실행
+// } else {
+//   조건이 거짓인 경우 실행  
+// }
+
+// 조건 : 표현식 (Boolean 값 평가)
+// const isTruethy = isLightColorRed === true
+// 만약 평가된 값이 참이면, 코드 블록 실행
+// if (isTruethy) {}
+
+let isLightColorRed = true && false // '빨간불'
+
 // 조건: isLightColorRed가 true인 경우
 //   - '신호등 앞에서 멈춰야 합니다.' 출력
+if (isLightColorRed) {
+  console.log('신호등 앞에서 멈춰야 합니다.')
+} else {
+  console.log('좌우를 살피고 건널목을 건넙니다.')
+}
+
 // 조건이 false인 경우
 //   - '좌우를 살피고 건널목을 건넙니다.' 출력
+// if (isLightColorRed !== true) {
+if (!isLightColorRed) {
+  console.log('좌우를 살피고 건널목을 건넙니다.')
+}
 
 
 // 설명:
@@ -118,24 +145,25 @@
 // 보다 크다(>), 크거나 같다(>=) 연산자
 
 // 24 > 23 결과 출력
-
+console.log(24 > 23)
 
 // 24 > 24 결과 출력
+console.log(24 > 24)
 
 
 // 24 >= 24 결과 출력
-
+console.log(24 >= 24)
 
 // 보다 작다(<), 작거나 같다(<=) 연산자
 
 // 24 < 25 결과 출력
-
+console.log(24 < 25)
 
 // 24 < 24 결과 출력
-
+console.log(24 < 24)
 
 // 24 <= 24 결과 출력
-
+console.log(24 <= 24)
 
 // 설명:
 // 크기 비교 연산자는 주로 숫자를 비교할 때 사용합니다.
@@ -152,15 +180,16 @@
 // 완전히 동일(===), 완전히 다름(!==) 연산자
 
 // 24 === 24 결과 출력
-
+console.log(24 === 24)
 
 // 24 !== 24 결과 출력
-
+console.log(24 !== 24)
 
 // '24' === 24 결과 출력 (타입이 다름)
-
+console.log(24 === '24')
 
 // '24' !== 24 결과 출력 (타입이 다름)
+console.log(24 !== '24')
 
 
 // 설명:
@@ -181,16 +210,16 @@
 // 느슨한 비교 (==, !=) - 타입 자동 변환
 
 // '24' == 24 결과 출력 (문자열이 숫자로 자동 변환)
-
+console.log(24 == '24')
 
 // '24' != 24 결과 출력 (문자열이 숫자로 자동 변환)
-
+console.log(24 != '24')
 
 // 0 == false 결과 출력 (false가 0으로 자동 변환)
-
+console.log(0 == false)
 
 // 1 == true 결과 출력 (true가 1로 자동 변환)
-
+console.log(1 == true)
 
 // 엄격한 비교 (===, !==) - 타입 변환 없음
 
@@ -223,19 +252,19 @@
 // Number() 함수를 사용하여 다양한 값을 숫자로 변환
 
 // '24'를 Number() 함수에 전달하여 결과 출력
-
+// 24
 
 // true를 Number() 함수에 전달하여 결과 출력
-
+// 1
 
 // false를 Number() 함수에 전달하여 결과 출력
-
+// 0
 
 // null을 Number() 함수에 전달하여 결과 출력
-
+// 0
 
 // undefined를 Number() 함수에 전달하여 결과 출력
-
+// NaN
 
 // 설명:
 // Number() 함수는 값을 숫자로 변환합니다.
@@ -254,16 +283,53 @@
 // --------------------------------------------------------------------------
 
 // lightColor 변수에 '노란색' 할당
+let lightColor = '노란색'
+console.log(lightColor)
 
+// 색상이 '빨간색'으로 변경(할당)
+lightColor = '빨간색'
+console.log(lightColor)
+
+// 색상이 '초록색'으로 변경(할당)
+lightColor = '초록색'
+console.log(lightColor)
+
+if (lightColor === '빨간색') {
+  console.log('신호등 앞에서 멈춰야 합니다.')
+}
+if (lightColor === '초록색') {
+  console.log('좌우를 살피고 건널목을 여유있게 건넙니다.')
+}
+if (lightColor === '노란색') {
+  console.log('좌우를 살피고 건널목을 빠르게 건너갑니다.')
+}
+
+if (lightColor === '빨간색') {
+  console.log('신호등 앞에서 멈춰야 합니다.')
+}
+else if (lightColor === '초록색') {
+  console.log('좌우를 살피고 건널목을 여유있게 건넙니다.')
+}
+else {
+  console.log('좌우를 살피고 건널목을 빠르게 건넙니다.')
+}
 
 // if … else if … else 문 작성
 // 조건 1: lightColor가 '빨간색'인 경우
 //   - '신호등 앞에서 멈춰야 합니다.' 출력
+if (lightColor === '빨간색') {
+  console.log('신호등 앞에서 멈춰야 합니다.')
+}
 // 조건 2: lightColor가 '초록색'인 경우
 //   - '좌우를 살피고 건널목을 여유있게 건넙니다.' 출력
-// 그 외의 경우
+// 그 외의 경우 (빨간색도 초록색도 아닌 노란색)
+else if (lightColor === '초록색') {
+  console.log('좌우를 살피고 건널목을 여유있게 건넙니다.')
+}
 //   - '좌우를 살피고 건널목을 빠르게 건너갑니다.' 출력
-
+else {
+  console.log('좌우를 살피고 건널목을 빠르게 건넙니다.')
+}
 
 // 설명:
 // else if 문을 사용하면 여러 조건을 순차적으로 검사할 수 있습니다.
@@ -271,6 +337,23 @@
 
 // 출력 결과:
 // '좌우를 살피고 건널목을 빠르게 건너갑니다.'
+
+let userAge = 5
+
+if (userAge < 7) {
+  // 사용자 나이가 7세 미만인 경우
+} 
+else if (userAge >= 7 && userAge < 14) {
+  // 사용자 나이가 7세 이상 14세 미만인 경우
+} 
+else if (userAge >= 14 && userAge < 24) {
+  // 사용자 나이가 14세 이상 24세 미만인 경우
+}
+else if (userAge >= 24 && userAge < 32) {
+  // 사용자 나이가 24세 이상 32세 미만인 경우
+} else {
+  // 사용자 나이가 32세 이상인 경우
+}
 
 
 // --------------------------------------------------------------------------
@@ -342,17 +425,29 @@
 
 // 나이에 따른 입장료 계산
 // age 변수에 15 할당
-
+let age = 15
 
 // if … else if … else 문 작성
 // 조건 1: age가 7 미만인 경우
 //   - '입장료: 무료' 출력
+if (age < 7) {
+  console.log('입장료: 무료')
+}
 // 조건 2: age가 7 이상 19 미만인 경우
 //   - '입장료: 5,000원' 출력
+else if (age >= 7 && age < 19) {
+  console.log('입장료: 5,000원')
+}
 // 조건 3: age가 19 이상 65 미만인 경우
 //   - '입장료: 10,000원' 출력
+else if (age >= 19 && age < 65) {
+  console.log('입장료: 10,000원')
+}
 // 그 외의 경우
 //   - '입장료: 7,000원' 출력
+else {
+  console.log('입장료: 7,000원')
+}
 
 
 // 설명:
@@ -364,18 +459,29 @@
 
 // 온도에 따른 옷차림 추천
 // temperature 변수에 25 할당
-
+let temperature = 25
 
 // if … else if … else 문 작성
 // 조건 1: temperature가 28 이상인 경우
 //   - '반팔과 반바지를 입으세요.' 출력
+if (temperature >= 28) {
+  console.log('반팔과 반바지를 입으세요.')
+}
 // 조건 2: temperature가 20 이상 28 미만인 경우
 //   - '긴팔 티셔츠를 입으세요.' 출력
+else if (temperature >= 20 && temperature < 28) {
+  console.log('긴팔 티셔츠를 입으세요.')
+}
 // 조건 3: temperature가 10 이상 20 미만인 경우
 //   - '가디건이나 자켓을 챙기세요.' 출력
+else if (temperature >= 10 && temperature < 20) {
+  console.log('가디건이나 자켓을 챙기세요.')
+}
 // 그 외의 경우
 //   - '두꺼운 외투를 입으세요.' 출력
-
+else {
+  console.log('두꺼운 외투를 입으세요.')
+}
 
 // 설명:
 // 온도에 따라 적절한 옷차림을 추천합니다.
@@ -386,16 +492,22 @@
 
 // 로그인 상태 확인
 // isLoggedIn 변수에 false 할당
-
+let isLoggedIn = false
 
 // username 변수에 null 할당
-
+let username = null
 
 // if 문 작성
 // 조건: isLoggedIn === true이고 username !== null인 경우
 //   - '[username]님, 환영합니다!' 출력
 // 그 외의 경우
 //   - '로그인이 필요합니다.' 출력
+
+if (isLoggedIn === true && username !== null) {
+  console.log(username + '님, 환영합니다!')
+} else {
+  console.log('로그인이 필요합니다.')
+}
 
 
 // 설명:
@@ -404,3 +516,76 @@
 // 출력 결과:
 // '로그인이 필요합니다.'
 
+
+// --------------------------------------------------------------------------
+// 추가 연습 예제 (내 코드)
+// --------------------------------------------------------------------------
+
+// 나이에 따른 입장료 계산
+// age 변수에 15 할당
+
+// if … else if … else 문 작성
+// 조건 1: age가 7 미만인 경우
+//   - '입장료: 무료' 출력
+// 조건 2: age가 7 이상 19 미만인 경우
+//   - '입장료: 5,000원' 출력
+// 조건 3: age가 19 이상 65 미만인 경우
+//   - '입장료: 10,000원' 출력
+// 그 외의 경우
+//   - '입장료: 7,000원' 출력
+// 설명:
+// 여러 조건을 순차적으로 검사하여 나이에 따른 입장료를 계산합니다.
+// 출력 결과:
+// '입장료: 5,000원'
+{
+  let age = 15
+
+  if (age < 7) console.log('입장료: 무료')
+  else if (age < 19) console.log('입장료: 5,000원')
+  else if (age < 65) console.log('입장료: 10,000원')
+  else console.log('입장료: 7,000원')
+}
+
+// 온도에 따른 옷차림 추천
+// temperature 변수에 25 할당
+// if … else if … else 문 작성
+// 조건 1: temperature가 28 이상인 경우
+//   - '반팔과 반바지를 입으세요.' 출력
+// 조건 2: temperature가 20 이상 28 미만인 경우
+//   - '긴팔 티셔츠를 입으세요.' 출력
+// 조건 3: temperature가 10 이상 20 미만인 경우
+//   - '가디건이나 자켓을 챙기세요.' 출력
+// 그 외의 경우
+//   - '두꺼운 외투를 입으세요.' 출력
+// 설명:
+// 온도에 따라 적절한 옷차림을 추천합니다.
+// 출력 결과:
+// '긴팔 티셔츠를 입으세요.'
+{
+  let temperature = 25
+  if (temperature >= 28) console.log('반팔과 반바지를 입으세요.')
+  else if (temperature >= 20) console.log('긴팔 티셔츠를 입으세요.')
+  else if (temperature >= 10) console.log('가디건이나 자켓을 챙기세요.')
+  else console.log('두꺼운 외투를 입으세요.')
+}
+
+
+// 로그인 상태 확인
+// isLoggedIn 변수에 false 할당
+// username 변수에 null 할당
+// if 문 작성
+// 조건: isLoggedIn === true이고 username !== null인 경우
+//   - '[username]님, 환영합니다!' 출력
+// 그 외의 경우
+//   - '로그인이 필요합니다.' 출력
+// 설명:
+// 엄격한 비교(===)를 사용하여 로그인 상태를 정확히 확인합니다.
+// 출력 결과:
+// '로그인이 필요합니다.'
+{
+  let isLoggedIn = true
+  let username = 'Ron'
+
+  if (isLoggedIn && username !== null) console.log(username + '님, 환영합니다!')
+  else console.log('로그인이 필요합니다.')
+}
