@@ -10,6 +10,19 @@
 // 1. 클래스 이름 추가 (add)
 // --------------------------------------------------------------------------
 
+// .prose 요소 찾기
+const prose = document.querySelector('.prose')
+console.log(prose) // HTMLElement
+
+// prose 요소(객체) 안에서 h1 요소(객체) 찾기
+const proseHeading = prose.querySelector('h1')
+console.dir(proseHeading) // HTMLHeadingElement
+
+// element.style // CSS
+// 
+proseHeading.classList.add('text-primary', 'font-bold')
+
+
 // [연습] 'text-primary' 클래스를 추가하세요.
 
 
