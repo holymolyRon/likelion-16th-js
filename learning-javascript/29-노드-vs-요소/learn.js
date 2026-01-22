@@ -4,42 +4,38 @@
 
 // [실습] 시스템이 정의한 모든 노드 타입 확인하기
 // document 객체를 반복문(for...in)으로 돌면서 키 이름에 'NODE'가 포함된 것만 콘솔에 출력하세요.
-console.group('1. 노드 타입 탐색')
+console.group("1. 노드 타입 탐색");
 // 이곳에 코드를 작성하세요.
 
-console.groupEnd()
-
+console.groupEnd();
 
 // [실습] 부모 및 자식 탐색하기
 // 1. '.life-tips' 요소를 변수 'list'에 할당하세요.
 // 2. 'list'의 부모 요소를 콘솔에 출력하세요. (Node.parentElement 사용)
 // 3. 'list'의 모든 '자식 노드(childNodes)'와 '자식 요소(children)'를 각각 출력하여 차이를 비교하세요.
-console.group('2. 탐색 메서드 비교')
-const list = null // null을 지우고 선택자를 작성하세요.
+console.group("2. 탐색 메서드 비교");
+// const list = null // null을 지우고 선택자를 작성하세요.
 
 // 이곳에 부모와 자식들을 출력하는 코드를 작성하세요.
 
-console.groupEnd()
-
+console.groupEnd();
 
 // [실습] 텍스트 노드(Text Node) 조작하기
 // 1. 첫 번째 p 태그의 첫 번째 자식 노드를 찾아 변수 'textNode'에 할당하세요.
 // 2. 해당 노드의 nodeType을 출력하여 '3'이 나오는지 확인하세요.
 // 3. 'textNode.textContent'를 이용해 내용을 "수정된 텍스트입니다"로 변경해 보세요.
-console.group('3. 텍스트 노드 직접 조작')
+console.group("3. 텍스트 노드 직접 조작");
 // 이곳에 코드를 작성하세요.
 
-console.groupEnd()
-
+console.groupEnd();
 
 // [실습] 요소(Element)만의 특권 확인하기
 // 1. 위에서 찾은 'textNode'에 classList.add('test')를 시도해 보고 에러가 나는지 확인하세요.
 // 2. 반면, p 태그(Element)에는 classList.add('is-active')를 적용하여 스타일이 변하는지 확인하세요.
-console.group('4. 요소 전용 속성 확인')
+console.group("4. 요소 전용 속성 확인");
 // 이곳에 코드를 작성하세요.
 
-console.groupEnd()
-
+console.groupEnd();
 
 // --------------------------------------------------------------------------
 // 핵심 요약!
@@ -51,3 +47,28 @@ console.groupEnd()
 // 5. 요소는 노드의 기능을 상속받으며 classList, getAttribute 등 전용 기능을 추가로 가집니다.
 // 6. 실무에서는 대부분 요소를 조작하지만, 구조 파악 시에는 노드의 개념이 필요합니다.
 // --------------------------------------------------------------------------
+
+// 모든 자식 요소 노드들
+console.log("모든 자식 요소 노드들: ", list.children);
+// console.log(list.children.forEach) // 사용 못함 ❌
+
+// 방법 1. 다른 반복 처리 활용
+//        - for 문 (while)
+for (let i = 0, l = list.children.length; i < l; ++i) {
+  const child = list.children[i];
+  console.log(child);
+}
+//        - for...of 문
+for (const child of list.children) {
+  console.log(child);
+}
+
+// 방법 2. 배열화
+Array.from(list.children).forEach((child) => {
+  console.log(child);
+});
+
+const firstParagraph = document.querySelector("p");
+const textNode = firstParagraph.firstChild; // 첫번째 자식 노드
+const textNodeType = textNode.nodeType; // 첫번째 자식 노드의 타입(유형)
+console.log(textNodeType, textNodeType === document.TEXT_NODE);
