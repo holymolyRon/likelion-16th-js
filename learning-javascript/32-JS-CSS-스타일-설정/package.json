@@ -1,13 +1,16 @@
 {
   "scripts": {
     "dev": "bunx live-server --host=localhost --port=3000 --entry-file=learn.html --no-browser",
+    "exercise": "bunx live-server --host=localhost --port=3002 --entry-file=exercise.html --no-browser",
     "lint": "eslint .",
     "hint": "htmlhint **/*.html"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
-    "globals": "^17.0.0"
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.0.0",
+    "prettier": "^3.8.1"
   },
   "dependencies": {
     "htmlhint": "^1.8.0"
