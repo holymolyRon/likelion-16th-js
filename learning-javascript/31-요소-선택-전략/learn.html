@@ -123,6 +123,57 @@ const classes = document.querySelectorAll('[class]');</code></pre>
       효율적인 요소 선택 전략 가이드가 업데이트되었습니다.
     </div>
 
+
+    <article data-practice="1">
+        <h2>실습 1. 선택자를 활용해 요소 선택</h2>
+        <h1 id="main-title">안녕하세요!</h1>
+        <p class="description">이것은 설명입니다.</p>
+        <button type="button" data-role="confirm">확인</button>
+        <button type="button" class="button">클릭</button>
+      </article>
+
+      <script>
+        // --------------------------------------------------------------------------
+        // [실습 1] 선택자를 활용해 요소 선택
+        // --------------------------------------------------------------------------
+        // 1. `id` 속성으로 요소를 선택한 후, 콘솔에 출력합니다.
+        // 2. `class` 속성으로 요소를 선택한 후, 콘솔에 출력합니다.
+        // 3. `button` 태그 이름으로 모든 요소를 선택한 후, 콘솔에 출력합니다.
+        // 4. `data-role` 속성으로 요소를 선택한 후, 콘솔에 출력합니다.
+        // --------------------------------------------------------------------------
+
+      </script>
+
+      <article data-practice="2">
+        <h2>2. JS 훅을 활용해 요소 선택</h2>
+        <div class="notification js-notification">
+          📢 중요한 알림입니다!
+        </div>
+        <button type="button" class="js-hide-button">알림 숨기기</button>
+      </article>
+
+      <script>
+        // --------------------------------------------------------------------------
+        // [실습 2] JS 훅을 활용해 요소 선택
+        // --------------------------------------------------------------------------
+        // 1. JS 훅을 사용해 요소를 선택합니다.
+        // 2. `"알림 숨기기"` 버튼을 사용자가 누르면 알림 내용(`notification`)이 감춰지도록 설정합니다.
+        // --------------------------------------------------------------------------
+
+      </script>
+
+      <article data-practice="3">
+        <h2>3. 쇼핑 카트 '전체 선택'</h2>
+        <h3>🛒 장바구니</h3>
+        <div class="cart-list">
+          <div class="cart-item">🍎 사과</div>
+          <div class="cart-item">🍌 바나나</div>
+          <div class="cart-item">🥛 우유</div>
+        </div>
+        <div class="button-group">
+          <button type="button" id="btn-select-all">전체 선택</button>
+        </div>
+      </article>
   </body>
 
 </html>

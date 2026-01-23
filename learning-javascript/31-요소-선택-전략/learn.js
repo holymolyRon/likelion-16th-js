@@ -20,8 +20,8 @@ console.groupEnd()
 // 3. 버튼에 'click' 이벤트 리스너를 추가하여, 알림창에 'hidden' 클래스가 추가되도록 만드세요.
 console.group('2. JS 훅과 이벤트 연결')
 
-const notification = null // 선택자를 작성하세요.
-const hideBtn = null      // 선택자를 작성하세요.
+// const notification = null // 선택자를 작성하세요.
+// const hideBtn = null      // 선택자를 작성하세요.
 
 // 이곳에 버튼 클릭 시 알림을 숨기는 로직을 작성하세요.
 
