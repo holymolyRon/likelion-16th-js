@@ -5,9 +5,41 @@
 // [실습] 기본적인 이벤트 위임 구현
 // 1. 상위 요소인 .link-list에 하나의 클릭 이벤트 리스너만 등록하세요.
 // 2. e.target 속성을 사용하여 실제 클릭된 요소가 무엇인지 콘솔에 찍어보세요.
-console.groupCollapsed('이벤트 위임 기본 동작 확인')
+console.group('이벤트 위임 기본 동작 확인')
 
-// 이곳에 코드를 작성하세요.
+// --------------------------------------------------------------------------
+// 이벤트 위임을 사용할 때
+const list = document.querySelector('.link-list') // Element
+
+// Element.addEventListener()
+list.addEventListener('click', (e) => {
+  // 브라우저 기본 작동 방지
+  e.preventDefault()
+
+  // 현재 이벤트 리스너가 추가된 대상
+  // e.currentTarget
+  const listElement = e.currentTarget
+  console.log('현재 이벤트 리스너가 추가된 대상', list === listElement) // true
+
+  // 이벤트 전파 중인 대상
+  const eventTarget = e.target
+  console.log('이벤트 전파 중인 대상', eventTarget, list === eventTarget)
+
+})
+
+// --------------------------------------------------------------------------
+// 이벤트 위임을 사용하지 않을 때
+// const links = list.querySelectorAll('[href]')
+
+// 5, 50번 순환
+// %, 50번 addEventListener 추가
+// for (const link of links) {
+//   link.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     const clickedLink = e.currentTarget
+//     console.log(clickedLink)
+//   })
+// }
 
 console.groupEnd()
 
@@ -52,3 +84,45 @@ console.groupEnd()
 // 4. 중첩 처리: <a> 내부의 자식을 클릭해도 closest('a')를 쓰면 부모 링크를 정확히 낚아챌 수 있습니다.
 // 5. CSS 해결법: 자식 요소에 pointer-events: none을 주면 자식을 투명하게 만들어 클릭을 통과시킵니다.
 // --------------------------------------------------------------------------
+
+
+
+
+
+
+// Element.addEventListener()
+list.addEventListener('click', handleMatchesDemo)
+
+// 이벤트 발생 대상 매칭 검사
+function handleMatchesDemo(e) {
+  // 이벤트 발생 대상
+  const eventTarget = e.target
+
+  const isLinkElement = eventTarget.matches('a[href]')
+  // 만약 a[href]요소가 맞다면?
+  if (isLinkElement) {
+    console.log('이벤트가 ')
+  }
+}
+
+// 이벤트 연결 대상(currentTarget) vs 이벤트 발생 대상(target)
+function hadleCompareTargets(e) {
+  // 브라우저 기본 작동 방지
+  e.preventDefault()
+
+  // 현재 이벤트 리스너가 추가된 대상
+  // e.currentTarget
+  const eventCurrentTarget = e.currentTarget
+  console.log(
+    '현재 이벤트 리스너가 추가된 대상', 
+    'e.currentTarget =', eventCurrentTarget // <ul>
+  ) 
+
+  // 이벤트 발생한 대상(요소)
+  const eventTarget = e.target
+  console.log(
+    '이벤트 발생한 대상(요소)', 
+    'e.target =', eventTarget // <ul>, <li>, <a> 중 하나
+  )
+
+}
